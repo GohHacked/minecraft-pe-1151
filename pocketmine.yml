@@ -1,0 +1,20 @@
+cat > pocketmine.yml << 'EOL'
+network:
+  batch-threshold: 256
+  compression-level: 7
+  async-compression: true
+  sleep-time: 1
+  max-mtu-size: 1400
+
+player:
+  save-player-data: true
+  auto-save: true
+
+level-settings:
+  tick-rate: 1
+  tick-per-animal-spawns: 400
+  tick-per-monster-spawns: 1
+
+debug:
+  level: 1
+EOL
