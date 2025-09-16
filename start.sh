@@ -1,4 +1,3 @@
-# Создаем исправленный start.sh
 cat > start.sh << 'EOF'
 #!/bin/bash
 cd ~/pmmp-server
@@ -14,7 +13,7 @@ if [ ! -f PocketMine-MP.phar ]; then
     exit 1
 fi
 
-# Экспортируем PATH (правильное написание!)
+# Экспортируем PATH
 export PATH="$HOME/php-local/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/php-local/lib:$LD_LIBRARY_PATH"
 
@@ -28,7 +27,7 @@ echo "🚀 Запускаем PocketMine-MP..."
 echo "⏳ Сервер запускается (это займет 1-2 минуты)..."
 echo "📝 Логи: tail -f ~/pmmp-server/server.log"
 
-# Запускаем сервер с правильными параметрами для 1.1.5
+# Запускаем сервер
 while true; do
     ~/php-local/bin/php PocketMine-MP.phar --no-wizard --disable-ansi --server-port=19132 --server-ip=0.0.0.0 --settings.enable-dev-builds=true
     echo "⚠️ Сервер остановлен, перезапуск через 5 секунд..."

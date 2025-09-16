@@ -1,4 +1,3 @@
-# Создаем исправленный install.sh
 cat > install.sh << 'EOF'
 #!/bin/bash
 echo "🎮 Установка PocketMine-MP для Minecraft PE 1.1.5..."
@@ -10,14 +9,14 @@ cd ~/pmmp-server
 
 # Скачиваем статический PHP 8.2 для PMMP
 echo "📦 Скачиваем PHP..."
-curl -L -o php.tar.gz "https://github.com/pmmp/PHP-Binaries/releases/download/php-8.2.12-linux-x86_64/PHP-Linux-x86_64-PM5.tar.gz"
+wget -O php.tar.gz "https://github.com/pmmp/PHP-Binaries/releases/download/php-8.2.12-linux-x86_64/PHP-Linux-x86_64-PM5.tar.gz"
 tar -xzf php.tar.gz -C ~/php-local
 rm -f php.tar.gz
 
 # Скачиваем PocketMine-MP совместимый с 1.1.5
 echo "⬇️ Скачиваем PocketMine-MP..."
-curl -L -o PocketMine-MP.phar "https://github.com/pmmp/PocketMine-MP/releases/download/4.0.0%2Bdev.1422/PocketMine-MP.phar"
-curl -L -o start.sh "https://raw.githubusercontent.com/pmmp/PocketMine-MP/master/start.sh"
+wget -O PocketMine-MP.phar "https://github.com/pmmp/PocketMine-MP/releases/download/4.0.0%2Bdev.1422/PocketMine-MP.phar"
+wget -O start.sh "https://raw.githubusercontent.com/pmmp/PocketMine-MP/master/start.sh"
 
 # Делаем файлы исполняемыми
 chmod +x start.sh PocketMine-MP.phar
@@ -53,16 +52,13 @@ network:
   async-compression: true
   sleep-time: 1
   max-mtu-size: 1400
-
 player:
   save-player-data: true
   auto-save: true
-
 level-settings:
   tick-rate: 1
   tick-per-animal-spawns: 400
   tick-per-monster-spawns: 1
-
 debug:
   level: 1
 EOL
