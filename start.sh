@@ -1,4 +1,5 @@
-cat > start.sh << 'EOL'
+# Создаем исправленный start.sh
+cat > start.sh << 'EOF'
 #!/bin/bash
 cd ~/pmmp-server
 
@@ -13,7 +14,7 @@ if [ ! -f PocketMine-MP.phar ]; then
     exit 1
 fi
 
-# Экспортируем PATH
+# Экспортируем PATH (правильное написание!)
 export PATH="$HOME/php-local/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/php-local/lib:$LD_LIBRARY_PATH"
 
@@ -33,4 +34,4 @@ while true; do
     echo "⚠️ Сервер остановлен, перезапуск через 5 секунд..."
     sleep 5
 done
-EOL
+EOF
